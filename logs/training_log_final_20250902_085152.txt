@@ -1,0 +1,44 @@
+============================================================
+POWER GRID RL TRAINING ON TPU
+============================================================
+JAX version: 0.6.2
+Devices: 4 x TPU v4
+============================================================
+Creating configuration...
+Getting JAX devices...
+Actor devices: [TpuDevice(id=0, process_index=0, coords=(0,0,0), core_on_chip=0), TpuDevice(id=1, process_index=0, coords=(1,0,0), core_on_chip=0)]
+Learner devices: [TpuDevice(id=2, process_index=0, coords=(0,1,0), core_on_chip=0)]
+Creating environment factory...
+Creating pipeline...
+Initializing multi-agent model...
+Model initialized!
+Exception in thread GridRLLearner:
+jax.errors.SimplifiedTraceback: For simplicity, JAX has removed its internal frames from the traceback of the following exception. Set JAX_TRACEBACK_FILTERING=off to include these.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/home/tarive/persistent_storage/tpu_rl_workspace/grid_rl/train_grid_rl_tpu.py", line 49, in run
+    self._run()
+  File "/home/tarive/persistent_storage/tpu_rl_workspace/grid_rl/train_grid_rl_tpu.py", line 537, in _run
+    self.state, metrics = self.update_fn(self.state, batch)
+  File "/home/tarive/persistent_storage/tpu_rl_workspace/grid_rl/train_grid_rl_tpu.py", line 496, in _update_step
+    (loss, metrics), grads = jax.value_and_grad(
+  File "/home/tarive/persistent_storage/tpu_rl_workspace/grid_rl/train_grid_rl_tpu.py", line 497, in <lambda>
+    lambda p: multi_agent_loss(p, observations, actions, targets, self.config.agent_config),
+ValueError: Non-hashable static arguments are not supported. An error occurred while trying to hash an object of type <class 'dict'>, {'strategic': {'advantages': Traced<float32[63]>with<DynamicJaxprTrace>, 'returns': Traced<float32[63]>with<DynamicJaxprTrace>, 'log_probs': Traced<float32[63]>with<DynamicJaxprTrace>}, 'operational': [{'advantages': Traced<float32[63]>with<DynamicJaxprTrace>, 'returns': Traced<float32[63]>with<DynamicJaxprTrace>, 'log_probs': Traced<float32[63]>with<DynamicJaxprTrace>}, {'advantages': Traced<float32[63]>with<DynamicJaxprTrace>, 'returns': Traced<float32[63]>with<DynamicJaxprTrace>, 'log_probs': Traced<float32[63]>with<DynamicJaxprTrace>}, {'advantages': Traced<float32[63]>with<DynamicJaxprTrace>, 'returns': Traced<float32[63]>with<DynamicJaxprTrace>, 'log_probs': Traced<float32[63]>with<DynamicJaxprTrace>}, {'advantages': Traced<float32[63]>with<DynamicJaxprTrace>, 'returns': Traced<float32[63]>with<DynamicJaxprTrace>, 'log_probs': Traced<float32[63]>with<DynamicJaxprTrace>}], 'safety': {'advantages': Traced<float32[63]>with<DynamicJaxprTrace>, 'returns': Traced<float32[63]>with<DynamicJaxprTrace>, 'log_probs': Traced<float32[63]>with<DynamicJaxprTrace>}}. The error was:
+TypeError: unhashable type: 'dict'
+
+
+Starting training components...
+Training with 2 actors and 1 learner
+Total parallel environments: 128
+TensorBoard logging to: /home/tarive/persistent_storage/tpu_rl_workspace/grid_rl/tensorboard
+------------------------------------------------------------
+
+Stopping training components...
+
+Training time: 0.00 hours
+============================================================

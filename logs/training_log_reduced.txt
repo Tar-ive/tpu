@@ -1,0 +1,35 @@
+============================================================
+POWER GRID RL TRAINING ON TPU
+============================================================
+JAX version: 0.6.2
+Devices: 4 x TPU v4
+============================================================
+Creating configuration...
+Getting JAX devices...
+Actor devices: [TpuDevice(id=0, process_index=0, coords=(0,0,0), core_on_chip=0), TpuDevice(id=1, process_index=0, coords=(1,0,0), core_on_chip=0)]
+Learner devices: [TpuDevice(id=2, process_index=0, coords=(0,1,0), core_on_chip=0), TpuDevice(id=3, process_index=0, coords=(1,1,0), core_on_chip=0)]
+Creating environment factory...
+Creating pipeline...
+Initializing multi-agent model...
+Model initialized!
+Exception in thread GridRLLearner:
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/home/tarive/persistent_storage/tpu_rl_workspace/grid_rl/train_grid_rl_tpu.py", line 47, in run
+    self._run()
+  File "/home/tarive/persistent_storage/tpu_rl_workspace/grid_rl/train_grid_rl_tpu.py", line 465, in _run
+    batch = jax.tree_map(lambda x: jnp.array(x), batch)
+  File "/home/tarive/.local/lib/python3.10/site-packages/jax/_src/deprecations.py", line 54, in getattr
+    raise AttributeError(message)
+AttributeError: jax.tree_map was removed in JAX v0.6.0: use jax.tree.map (jax v0.4.25 or newer) or jax.tree_util.tree_map (any JAX version).
+
+Starting training components...
+Training with 2 actors and 1 learner
+Total parallel environments: 128
+------------------------------------------------------------
+
+Stopping training components...
+
+Training time: 0.00 hours
+============================================================

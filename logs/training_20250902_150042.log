@@ -1,0 +1,5 @@
+2025-09-02 15:00:45,534 - __main__ - INFO - W&B initialized successfully
+2025-09-02 15:00:45,536 - __main__ - INFO - TensorBoard logging to ./tensorboard
+2025-09-02 15:00:45,539 - __main__ - INFO - Environment initialized:
+2025-09-02 15:00:45,539 - __main__ - INFO -   Observation dim: 618
+2025-09-02 15:00:45,539 - __main__ - INFO -   Action dim: 145

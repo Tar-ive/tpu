@@ -1,0 +1,22 @@
+============================================================
+POWER GRID RL TRAINING ON TPU
+============================================================
+JAX version: 0.6.2
+Devices: 4 x TPU v4
+============================================================
+Creating configuration...
+Getting JAX devices...
+Actor devices: [TpuDevice(id=0, process_index=0, coords=(0,0,0), core_on_chip=0), TpuDevice(id=1, process_index=0, coords=(1,0,0), core_on_chip=0)]
+Learner devices: [TpuDevice(id=2, process_index=0, coords=(0,1,0), core_on_chip=0)]
+Creating environment factory...
+Creating pipeline...
+Initializing multi-agent model...
+https://symbolize.stripped_domain/r/?trace=7f6923a91117,7f6923a4251f&map= 
+*** SIGTERM received by PID 145830 (TID 145830) on cpu 152 from PID 147491; stack trace: ***
+PC: @     0x7f6923a91117  (unknown)  (unknown)
+    @     0x7f686f1b47e5       1904  (unknown)
+    @     0x7f6923a42520  (unknown)  (unknown)
+    @               0x1d  (unknown)  (unknown)
+https://symbolize.stripped_domain/r/?trace=7f6923a91117,7f686f1b47e4,7f6923a4251f,1c&map= 
+E0902 08:25:07.767437  145830 coredump_hook.cc:247] RAW: Remote crash gathering disabled for SIGTERM.
+E0902 08:25:07.916421  145830 process_state.cc:808] RAW: Raising signal 15 with default behavior

@@ -1,0 +1,76 @@
+Exception in thread GridRLActor-2:
+jax.errors.SimplifiedTraceback: For simplicity, JAX has removed its internal frames from the traceback of the following exception. Set JAX_TRACEBACK_FILTERING=off to include these.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/home/tarive/persistent_storage/tpu_rl_workspace/grid_rl/train_grid_rl_tpu.py", line 47, in run
+    self._run()
+  File "/home/tarive/persistent_storage/tpu_rl_workspace/grid_rl/train_grid_rl_tpu.py", line 320, in _run
+    actions, values, outputs, self.rng = select_actions(
+  File "/home/tarive/persistent_storage/tpu_rl_workspace/grid_rl/train_grid_rl_tpu.py", line 267, in select_actions
+    combined_action = jnp.concatenate([
+  File "/home/tarive/.local/lib/python3.10/site-packages/jax/_src/numpy/lax_numpy.py", line 4625, in concatenate
+    arrays_out = [lax.concatenate(arrays_out[i:i+k], axis)
+  File "/home/tarive/.local/lib/python3.10/site-packages/jax/_src/numpy/lax_numpy.py", line 4625, in <listcomp>
+    arrays_out = [lax.concatenate(arrays_out[i:i+k], axis)
+TypeError: Cannot concatenate arrays with different numbers of dimensions: got (256, 1), (1024,), (256, 1).
+Exception in thread GridRLActor-3:
+jax.errors.SimplifiedTraceback: For simplicity, JAX has removed its internal frames from the traceback of the following exception. Set JAX_TRACEBACK_FILTERING=off to include these.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/home/tarive/persistent_storage/tpu_rl_workspace/grid_rl/train_grid_rl_tpu.py", line 47, in run
+    self._run()
+  File "/home/tarive/persistent_storage/tpu_rl_workspace/grid_rl/train_grid_rl_tpu.py", line 320, in _run
+    actions, values, outputs, self.rng = select_actions(
+  File "/home/tarive/persistent_storage/tpu_rl_workspace/grid_rl/train_grid_rl_tpu.py", line 267, in select_actions
+    combined_action = jnp.concatenate([
+  File "/home/tarive/.local/lib/python3.10/site-packages/jax/_src/numpy/lax_numpy.py", line 4625, in concatenate
+    arrays_out = [lax.concatenate(arrays_out[i:i+k], axis)
+  File "/home/tarive/.local/lib/python3.10/site-packages/jax/_src/numpy/lax_numpy.py", line 4625, in <listcomp>
+    arrays_out = [lax.concatenate(arrays_out[i:i+k], axis)
+TypeError: Cannot concatenate arrays with different numbers of dimensions: got (256, 1), (1024,), (256, 1).
+Exception in thread GridRLActor-1:
+jax.errors.SimplifiedTraceback: For simplicity, JAX has removed its internal frames from the traceback of the following exception. Set JAX_TRACEBACK_FILTERING=off to include these.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/home/tarive/persistent_storage/tpu_rl_workspace/grid_rl/train_grid_rl_tpu.py", line 47, in run
+    self._run()
+  File "/home/tarive/persistent_storage/tpu_rl_workspace/grid_rl/train_grid_rl_tpu.py", line 320, in _run
+    actions, values, outputs, self.rng = select_actions(
+  File "/home/tarive/persistent_storage/tpu_rl_workspace/grid_rl/train_grid_rl_tpu.py", line 267, in select_actions
+    combined_action = jnp.concatenate([
+  File "/home/tarive/.local/lib/python3.10/site-packages/jax/_src/numpy/lax_numpy.py", line 4625, in concatenate
+Exception in thread GridRLActor-0:
+jax.errors.SimplifiedTraceback: For simplicity, JAX has removed its internal frames from the traceback of the following exception. Set JAX_TRACEBACK_FILTERING=off to include these.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    arrays_out = [lax.concatenate(arrays_out[i:i+k], axis)
+  File "/home/tarive/.local/lib/python3.10/site-packages/jax/_src/numpy/lax_numpy.py", line 4625, in <listcomp>
+    arrays_out = [lax.concatenate(arrays_out[i:i+k], axis)
+TypeError: Cannot concatenate arrays with different numbers of dimensions: got (256, 1), (1024,), (256, 1).
+    self.run()
+  File "/home/tarive/persistent_storage/tpu_rl_workspace/grid_rl/train_grid_rl_tpu.py", line 47, in run
+    self._run()
+  File "/home/tarive/persistent_storage/tpu_rl_workspace/grid_rl/train_grid_rl_tpu.py", line 320, in _run
+    actions, values, outputs, self.rng = select_actions(
+  File "/home/tarive/persistent_storage/tpu_rl_workspace/grid_rl/train_grid_rl_tpu.py", line 267, in select_actions
+    combined_action = jnp.concatenate([
+  File "/home/tarive/.local/lib/python3.10/site-packages/jax/_src/numpy/lax_numpy.py", line 4625, in concatenate
+    arrays_out = [lax.concatenate(arrays_out[i:i+k], axis)
+  File "/home/tarive/.local/lib/python3.10/site-packages/jax/_src/numpy/lax_numpy.py", line 4625, in <listcomp>
+    arrays_out = [lax.concatenate(arrays_out[i:i+k], axis)
+TypeError: Cannot concatenate arrays with different numbers of dimensions: got (256, 1), (1024,), (256, 1).

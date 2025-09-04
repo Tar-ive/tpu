@@ -1,0 +1,50 @@
+============================================================
+POWER GRID RL TRAINING ON TPU
+============================================================
+JAX version: 0.6.2
+Devices: 4 x TPU v4
+============================================================
+Creating configuration...
+Getting JAX devices...
+Actor devices: [TpuDevice(id=0, process_index=0, coords=(0,0,0), core_on_chip=0), TpuDevice(id=1, process_index=0, coords=(1,0,0), core_on_chip=0)]
+Learner devices: [TpuDevice(id=2, process_index=0, coords=(0,1,0), core_on_chip=0)]
+Creating environment factory...
+Creating pipeline...
+Initializing multi-agent model...
+Model initialized!
+Exception in thread GridRLLearner:
+jax.errors.SimplifiedTraceback: For simplicity, JAX has removed its internal frames from the traceback of the following exception. Set JAX_TRACEBACK_FILTERING=off to include these.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/home/tarive/persistent_storage/tpu_rl_workspace/grid_rl/train_grid_rl_tpu.py", line 49, in run
+    self._run()
+  File "/home/tarive/persistent_storage/tpu_rl_workspace/grid_rl/train_grid_rl_tpu.py", line 538, in _run
+    self.state, metrics = self.update_fn(self.state, batch)
+  File "/home/tarive/persistent_storage/tpu_rl_workspace/grid_rl/train_grid_rl_tpu.py", line 500, in _update_step
+    (loss, metrics), grads = jax.value_and_grad(loss_fn, has_aux=True)(state.params)
+  File "/home/tarive/persistent_storage/tpu_rl_workspace/grid_rl/train_grid_rl_tpu.py", line 497, in loss_fn
+    return multi_agent_loss(params, observations, actions, targets, self.config.agent_config)
+  File "/home/tarive/persistent_storage/tpu_rl_workspace/grid_rl/agents/multi_agent_grid_rl.py", line 398, in multi_agent_loss
+    outputs = model.apply(
+  File "/home/tarive/persistent_storage/tpu_rl_workspace/grid_rl/agents/multi_agent_grid_rl.py", line 288, in __call__
+    op_logits, op_value = operational_agent(obs_slice, strategic_features)
+  File "/home/tarive/persistent_storage/tpu_rl_workspace/grid_rl/agents/multi_agent_grid_rl.py", line 175, in __call__
+    x = nn.Dense(expected_obs_dim)(x)
+  File "/home/tarive/.local/lib/python3.10/site-packages/flax/linen/linear.py", line 264, in __call__
+    kernel = self.param(
+flax.errors.ScopeParamShapeError: Initializer expected to generate shape (96, 256) but got shape (27, 64) instead for parameter "kernel" in "/OperationalAgent_0/Dense_0". (https://flax.readthedocs.io/en/latest/api_reference/flax.errors.html#flax.errors.ScopeParamShapeError)
+
+Starting training components...
+Training with 2 actors and 1 learner
+Total parallel environments: 128
+TensorBoard logging to: /home/tarive/persistent_storage/tpu_rl_workspace/grid_rl/tensorboard
+------------------------------------------------------------
+
+Stopping training components...
+
+Training time: 0.00 hours
+============================================================
