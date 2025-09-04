@@ -127,3 +127,6 @@ Thumbs.db
 *.tmp
 *.temp
 *~
+# Documentation files
+progress_20250902_083154.md
+SESSION_SUMMARY_20250902.md
